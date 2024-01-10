@@ -60,6 +60,11 @@ app.get('/:col', async (req, res) => {
   res.json(items).end()
 })
 
+//healthcheck
+app.get('/healthcheck', async (req, res) => {
+  res.send("healthy")
+})
+
 // Catch all handler for all other request.
 app.use('*', (req, res) => {
   res.json({ msg: 'no route handler found' }).end()
